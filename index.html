@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="font.css" >
+  <link rel="stylesheet" href="font.css">
   <title>Document</title>
 </head>
+
 <body>
-  <header>
-    <h1>충녕봇</h1>
-    <nav>
-      <div class="Search_Zone">
-        <div class="Search_box">
-          <div class="drop_nav">
-            <select class="select">
-              <option value="#">기간선택</option>
-              <option value="1">1주이내</option>
-              <option value="2">1달이내</option>
-              <option value="3">1년이내</option>
-              <option value="4">1년이후</option>
-            </select>
-            <select class="select" style="margin-left: 10px;">
-              <option value="1">제목</option>
-              <option value="2">내용</option>
-            </select>
-          </div>
-          <form action = '/page2/'>
-          <input class="Search_input" type="text" name = 'key' placeholder="검색어를 입력해주세요">
-          <button class="Search_icon" type="submit">
-            <a href="2page.html">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                stroke-linejoin="round" style="color: white;">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <circle cx="10" cy="10" r="7"></circle>
-                <line x1="21" y1="21" x2="15" y2="15"></line>
-              </svg>
-            </a>
-          </button>
-        </form>
-        </div>
-      </div>
-    </nav>
-  </header>
   <div class="side_bar">
-    
+    <div class="side_bar_title">
+      <h1>
+        <!-- 누르면 입력값 초기화 -->
+        <a href="#" class="">
+          충녕봇
+        </a>
+      </h1>
+    </div>
+    <div class="side_bar_list_background">
+      
+    </div>
+  </div>
+  <div>
+    <header class="header">
+      <nav>
+        <h1></h1>
+        <div class="Search_Zone">
+          <div class="Search_box">
+            <div class="drop_nav">
+              <select class="select">
+                <option value="#">기간선택</option>
+                <option value="1">1주이내</option>
+                <option value="2">1달이내</option>
+                <option value="3">1년이내</option>
+                <option value="4">1년이후</option>
+              </select>
+              <select class="select" style="margin-left: 10px;">
+                <option value="1">제목</option>
+                <option value="2">내용</option>
+              </select>
+            </div>
+            <form action='/page2/'>
+              <input class="Search_input" type="text" name='key' placeholder="검색어를 입력해주세요">
+              <button class="Search_icon" type="submit">
+                <a href="2page.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="10" cy="10" r="7"></circle>
+                    <line x1="21" y1="21" x2="15" y2="15"></line>
+                  </svg>
+                </a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
   </div>
 </body>
+
 </html>
