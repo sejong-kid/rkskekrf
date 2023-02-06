@@ -6,39 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="text_area.css">
   <link rel="stylesheet" href="font.css">
   <title>Document</title>
 </head>
 
 <body>
   <div class="side_bar">
-    <div class="side_bar_title">
-      <h1>
-        <!-- 누르면 입력값 초기화 -->
-        <a href="#" class="">
-          충녕봇
-        </a>
-      </h1>
-    </div>
     <div class="side_bar_list_background">
-      <button class="list_one" type="button">
-        <span> 가나다 </span>
-      </button>
-      <button class="list_two" type="button">
-        <span> 가나다 </span>
-      </button>
-      <button class="list_tre" type="button">
-        <span> 가나다 </span>
-      </button>
-      <button class="list_for" type="button">
-        <span> 가나다 </span>
-      </button>
-      <button class="list_fiv" type="button">
-        <span> 가나다 </span>
-      </button>
+        <!-- 충녕이 li 클래스 명 띄어쓰기 주의 -->
+        <!-- 버튼 클릭시 배경 변경 유지 영상 참고하여 작성함 -->
+        <!-- https://www.youtube.com/watch?v=P_A2kNpyQBs -->
+        <li class="list active" id="list_title" style="margin-bottom: 100px; margin-top: -121px;">
+          <b></b>
+          <b></b>
+          <button class="list_title" type="button">
+            <span> 충녕봇 </span>
+          </button>
+        </li>
+        <div class="side_menu_one">
+          <li class="list">
+            <b></b>
+            <b></b>
+            <button class="list_sub" type="button">
+              <span> 채용 및 모집 </span>
+            </button>
+          </li>
+        </div>
+        <div class="side_menu_two">
+          <li class="list">
+            <b></b>
+            <b></b>
+            <button class="list_sub" type="button">
+              <span> 참여 </span>
+            </button>
+          </li>
+        </div>
+        <div class="side_menu_tre">
+          <li class="list">
+            <b></b>
+            <b></b>
+            <button class="list_sub" type="button">
+              <span> 기타 </span>
+            </button>
+          </li>
+        </div>
     </div>
   </div>
-  <div>
+  <div class="serch_bar">
     <header class="header">
       <nav>
         <h1></h1>
@@ -76,6 +92,60 @@
       </nav>
     </header>
   </div>
+  <div class="text_area">
+    <div class="main_door">
+      <div class="info">
+        <span>
+          충녕봇 소개
+        </span>
+        <hr />
+        <p class="img" style="line-height: 45px;">
+          세종시 각 기관들의 공지사항을
+          <br> 검색 한 번으로 보실 수 있습니다.
+          <br> 원하는 정보를 찾기 위해
+          <br> 여기저기 돌아다닐 필요없이
+          <br> 이 곳에서 검색해 보세요!
+          <img src="충녕이.gif" style="display: inline-block; scale: 30%;">
+        </p>
+      </div>
+      <div class="search_info_zone">
+        <span>
+          검색창
+        </span>
+        <hr />
+        <p style="font-weight: bold; margin-bottom: -25px;">세부검색 기능 </p>
+        <p style="line-height: 35px;">기간과 제목 또는 <br> 내용 선택 </p>
+      </div>
+      <div class="search_info_category">
+        <span>
+          카테고리
+        </span>
+        <hr />
+        <p style="font-weight: bold; margin-bottom: -25px;"> 상위 검색어 카테고리화</p>
+        <p style="line-height: 35px;"> 가장 많이 올라오는 <br>내용을 카테고리로 나눔</p>
+      </div>
+      <div class="program">
+        <span>
+          개발도구
+        </span>
+        <hr />
+        <p style="margin-bottom: -25px;"> python / django </p>
+        <p style="margin-bottom: -25px;"> html / css / javascript </p>
+        <p style="margin-bottom: -25px;"> notion / aws </p>
+      </div>
+      <div class="developer">
+        <span>
+          개발자
+        </span>
+        <hr />
+        <p style="margin-bottom: -25px;">배찬호 안용상</p>
+        <p style="margin-bottom: -25px;">최준호 선수영 최정웅</p>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="sidebar_click.js"></script>
+  <!-- <script type="text/javascript" src="text_area.js"></script> -->
 </body>
 
 </html>
