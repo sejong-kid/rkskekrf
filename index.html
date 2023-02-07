@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="text_area.css">
+  <link rel="stylesheet" href="category_1.css">
   <link rel="stylesheet" href="font.css">
   <title>Document</title>
 </head>
@@ -21,7 +22,7 @@
         <li class="list active" id="list_title" style="margin-bottom: 100px; margin-top: -121px;">
           <b></b>
           <b></b>
-          <button class="list_title" type="button">
+          <button class="list_title" type="button" onclick="door()">
             <span> 충녕봇 </span>
           </button>
         </li>
@@ -29,7 +30,7 @@
           <li class="list">
             <b></b>
             <b></b>
-            <button class="list_sub" type="button">
+            <button class="list_sub" type="button" onclick="Recruitment()">
               <span> 채용 및 모집 </span>
             </button>
           </li>
@@ -38,7 +39,7 @@
           <li class="list">
             <b></b>
             <b></b>
-            <button class="list_sub" type="button">
+            <button class="list_sub" type="button" onclick="Recruitment()">
               <span> 참여 </span>
             </button>
           </li>
@@ -47,7 +48,7 @@
           <li class="list">
             <b></b>
             <b></b>
-            <button class="list_sub" type="button">
+            <button class="list_sub" type="button" onclick="Recruitment()">
               <span> 기타 </span>
             </button>
           </li>
@@ -92,7 +93,7 @@
       </nav>
     </header>
   </div>
-  <div class="text_area">
+  <div class="text_area" id="door">
     <div class="main_door">
       <div class="info">
         <span>
@@ -105,7 +106,7 @@
           <br> 원하는 정보를 찾기 위해
           <br> 여기저기 돌아다닐 필요없이
           <br> 이 곳에서 검색해 보세요!
-          <img src="충녕이.gif" style="display: inline-block; scale: 30%;">
+          <img src="충녕이.gif" style="width:100%; height:100%; object-fit:cover;">
         </p>
       </div>
       <div class="search_info_zone">
@@ -142,7 +143,82 @@
         <p style="margin-bottom: -25px;">최준호 선수영 최정웅</p>
       </div>
     </div>
-
+  </div>
+  <div class="category_1" id="category1">
+    <div class="category_1_body">
+      <div class="category_1_btn" id="btn1">
+        <button>채용</button>
+        <button>업체모집</button>
+      </div>
+        <table class="list_table" >
+          <th width="60">순번</th>
+          <th width="500">제목</th>
+          <th width="150">날짜</th>
+          <th width="300">수집처</th>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+        </table>
+    </div>
+    </div>
+    </div>
   </div>
   <script type="text/javascript" src="sidebar_click.js"></script>
   <!-- <script type="text/javascript" src="text_area.js"></script> -->
