@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 자바스크립트 연결 링크는 하단에 위치함 -->
+<!-- 각 영역별로 css 파일을 달리함 -->
+<!-- 원페이지로 작업하여서 코드가 길으니, div 영역별로 접어서 작업하길 권장함 -->
+<!-- 해당 html은 크롬 기준 확대/축소 100%에 맞춰서 작업됨 -->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,51 +15,57 @@
   <link rel="stylesheet" href="text_area.css">
   <link rel="stylesheet" href="category_1.css">
   <link rel="stylesheet" href="font.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="pageing.css">
+  <title>충녕AI</title>
 </head>
 
-<body>
+<!-- oncontextmenu='return false' onselectstart='return false' ondragstart='return false' -->
+<!-- 드레그 방지, 우클릭 방지 기타 등등 방지하는 명령어  -->
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+  <!-- sidebar.css -->
   <div class="side_bar">
     <div class="side_bar_list_background">
-        <!-- 충녕이 li 클래스 명 띄어쓰기 주의 -->
-        <!-- 버튼 클릭시 배경 변경 유지 영상 참고하여 작성함 -->
-        <!-- https://www.youtube.com/watch?v=P_A2kNpyQBs -->
-        <li class="list active" id="list_title" style="margin-bottom: 100px; margin-top: -121px;">
+      <!-- 충녕이 li 클래스 명 띄어쓰기 주의 -->
+      <!-- 버튼 클릭시 배경 변경 유지 영상 참고하여 작성함 -->
+      <!-- https://www.youtube.com/watch?v=P_A2kNpyQBs -->
+      <li class="list active" id="list_title" style="margin-bottom: 100px; margin-top: -121px;">
+        <b></b>
+        <b></b>
+        <!-- 아래의 온클릭은 sidebar_click.js 에서 수정 -->
+        <button class="list_title" type="button" onclick="door()">
+          <span> 충녕봇 </span>
+        </button>
+      </li>
+      <div class="side_menu_one" onclick="Recruitment1()">
+        <li class="list">
           <b></b>
           <b></b>
-          <button class="list_title" type="button" onclick="door()">
-            <span> 충녕봇 </span>
+          <button class="list_sub" type="button" >
+            <span> 채용 및 모집 </span>
           </button>
         </li>
-        <div class="side_menu_one">
-          <li class="list">
-            <b></b>
-            <b></b>
-            <button class="list_sub" type="button" onclick="Recruitment()">
-              <span> 채용 및 모집 </span>
-            </button>
-          </li>
-        </div>
-        <div class="side_menu_two">
-          <li class="list">
-            <b></b>
-            <b></b>
-            <button class="list_sub" type="button" onclick="Recruitment()">
-              <span> 참여 </span>
-            </button>
-          </li>
-        </div>
-        <div class="side_menu_tre">
-          <li class="list">
-            <b></b>
-            <b></b>
-            <button class="list_sub" type="button" onclick="Recruitment()">
-              <span> 기타 </span>
-            </button>
-          </li>
-        </div>
+      </div>
+      <div class="side_menu_two" onclick="Recruitment2()">
+        <li class="list">
+          <b></b>
+          <b></b>
+          <button class="list_sub" type="button">
+            <span> 참여 </span>
+          </button>
+        </li>
+      </div>
+      <div class="side_menu_tre" onclick="Recruitment3()">
+        <li class="list">
+          <b></b>
+          <b></b>
+          <button class="list_sub" type="button">
+            <span> 기타 </span>
+          </button>
+        </li>
+      </div>
     </div>
   </div>
+  <!-- style.css -->
   <div class="serch_bar">
     <header class="header">
       <nav>
@@ -74,10 +85,13 @@
                 <option value="2">내용</option>
               </select>
             </div>
-            <form action='/page2/'>
-              <input class="Search_input" type="text" name='key' placeholder="검색어를 입력해주세요">
-              <button class="Search_icon" type="submit">
-                <a href="2page.html">
+            <form>
+              <!-- placeholder = 검색창 바깥 텍스트 -->
+              <!-- autocomplete = 자동완성 기능 관련 명령어 -->
+              <input class="Search_input" type="text" name='key' placeholder="검색어를 입력해주세요" autocomplete='off'/>
+
+              <!-- onclick="serchbtn()" 해당 온클릭은 text_area.js 에서 수정 -->
+              <button class="Search_icon" type="submit" onclick="serchbtn()">
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
                     height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                     stroke-linecap="round" stroke-linejoin="round" style="color: white;">
@@ -85,7 +99,6 @@
                     <circle cx="10" cy="10" r="7"></circle>
                     <line x1="21" y1="21" x2="15" y2="15"></line>
                   </svg>
-                </a>
               </button>
             </form>
           </div>
@@ -93,6 +106,12 @@
       </nav>
     </header>
   </div>
+  <div class="Search_text" id="serchtext">
+    <span>
+      "*"에 관한 총 * 건의 검색 결과를 표시합니다.
+    </span>    
+  </div>
+  <!-- text_area.css -->
   <div class="text_area" id="door">
     <div class="main_door">
       <div class="info">
@@ -144,84 +163,115 @@
       </div>
     </div>
   </div>
+  <!-- sidebar.css -->
   <div class="category_1" id="category1">
     <div class="category_1_body">
       <div class="category_1_btn" id="btn1">
         <button>채용</button>
         <button>업체모집</button>
       </div>
-        <table class="list_table" >
-          <th width="60">순번</th>
-          <th width="500">제목</th>
-          <th width="150">날짜</th>
-          <th width="300">수집처</th>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-          </tr>
-        </table>
-    </div>
-    </div>
+      <div class="category_1_btn" id="btn2">
+        <button style="width: 130px;">청소년 교육</button>
+        <button style="width: 200px;">주민자치 프로그램</button>
+        <button>전문교육</button>
+        <button>관람거리</button>
+        <button style="width: 160px;">대회&공모전</button>
+        <button>의견수렴</button>
+      </div>
+      <div class="category_1_btn" id="btn3">
+        <button style="width: 200px;">의회 및 시청일정</button>
+        <button style="width: 200px;">합격 & 당첨</button>
+      </div>
+      <table class="list_table">
+        <th width="60">순번</th>
+        <th width="500">제목</th>
+        <th width="150">날짜</th>
+        <th width="300">수집처</th>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+      </table>
+      <!-- pageing.css -->
+      <div class="page">
+          <ul class="pagination modal">
+            <li> <a href="#" class="first">처음 페이지</a></li>
+            <li> <a href="#" class="arrow left"> << </a></li>
+            <li> <a href="#" class="active num"> 1 </a></li>
+            <li> <a href="#" class="num"> 2 </a></li>
+            <li> <a href="#" class="num"> 3 </a></li>
+            <li> <a href="#" class="num"> 4 </a></li>
+            <li> <a href="#" class="num"> 5 </a></li>
+            <li> <a href="#" class="num"> 6 </a></li>
+            <li> <a href="#" class="num"> 7 </a></li>
+            <li> <a href="#" class="num"> 8 </a></li>
+            <li> <a href="#" class="num"> 9 </a></li>
+            <li> <a href="#" class="arrow right"> >> </a></li>
+            <li> <a href="#" class="last"> 끝 페이지 </a></li>
+          </ul>
+      </div>
     </div>
   </div>
+
+  <!-- javascript 영역 -->
   <script type="text/javascript" src="sidebar_click.js"></script>
-  <!-- <script type="text/javascript" src="text_area.js"></script> -->
+  <script type="text/javascript" src="text_area.js"></script>
 </body>
 
 </html>
